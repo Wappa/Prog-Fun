@@ -14,7 +14,10 @@ def meli_melo_temporel0(lieux, n, etapes, v):
             for j in range (0,n):
                 if etapes[i]["destination"] == lieux[j]["id"]:
                     DecalageJ = lieux[j]["decalage"]
-        print(abs(DecalageH)+abs(DecalageJ))
+        if (DecalageH < 0 and DecalageJ < 0) or (DecalageH > 0 and DecalageJ > 0):
+            print(abs(DecalageH - DecalageJ))
+        if (DecalageH <= 0 and DecalageJ >= 0) or (DecalageH >= 0 and DecalageJ <= 0):
+            print(abs(DecalageH)+abs(DecalageJ))
 
 
 
