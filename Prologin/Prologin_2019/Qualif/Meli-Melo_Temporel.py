@@ -9,11 +9,11 @@ def meli_melo_temporel0(lieux, n, etapes, v):
         if etapes[i]["voyageur"] == Harui :
             for j in range (0,n):
                 if etapes[i]["destination"] == lieux[j]["id"]:
-                    DecalageH += lieux[j]["decalage"]
+                    DecalageH = lieux[j]["decalage"]
         if etapes[i]["voyageur"] == Joseph :
             for j in range (0,n):
                 if etapes[i]["destination"] == lieux[j]["id"]:
-                    DecalageJ += lieux[j]["decalage"]
+                    DecalageJ = lieux[j]["decalage"]
         print(abs(DecalageH)+abs(DecalageJ))
 
 
