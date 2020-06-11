@@ -1,27 +1,20 @@
 def manhattan_maboul0(m, jours, n):
     NbAmi = 0
-    NbMax = 0
-    Conc = []
-    Sort = jours.sort()
-    j=0
+    fri =0
+    calend = []
+    rtn = []
+    w =0
     mini = min(jours)
     maxi = max(jours)+1
-    for i in range(mini,maxi):
+    i=min(jours)
+    for i in range(i,maxi,1):
         NbAmi =0
-        for j in range(i,j+m,1):
-            if i in jours :
-                NbAmi += jours.count(i)
-        Conc.append(NbAmi)
-        print(Conc)
-
-    print(min(jours))
-    print(max(jours))
-    print(max(Conc))
-
-
-    #print(mini)
-    #print(maxi)
-
+        if i in jours:
+            j = jours.count(i)
+            NbAmi += j
+        #print(NbAmi)
+        calend.append(NbAmi)
+    print(calend)
 
 (n, m) = list(map(int, input().split()))
 jours = list(map(int, input().split()))
