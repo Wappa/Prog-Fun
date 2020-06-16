@@ -12,23 +12,27 @@ def manhattan_maboul0(m, jours, n):
         rtn.append(jours.count(mini))
         print(max(rtn))
     else :
-
         for i in range(0,maxi,1):
             NbAmi =0
             if i in jours:
                 j = jours.count(i)
                 NbAmi += j
             calend.append(NbAmi)
-        h=i
-        for h in range (mini,maxi):
-            fri = 0
-            for w in range(w,a+1,1):
-                if w < len(calend):
-                    fri += calend[w]
-            rtn.append(fri)
-            a += 1
-            w += 1- m
-        print(max(rtn))
+        if m == 1:
+            for m in range (mini,maxi-1):
+                if calend[m] != 0 and calend [m+1] != 0:
+                    print(calend[m]+calend[m+1])
+        else:
+            h=i
+            for h in range (mini,maxi):
+                fri = 0
+                for w in range(w,a+1,1):
+                    if w < len(calend):
+                        fri += calend[w]
+                rtn.append(fri)
+                a += 1
+                w += 1- m
+            print(max(rtn))
 
 
 (n, m) = list(map(int, input().split()))
