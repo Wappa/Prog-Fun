@@ -1,0 +1,24 @@
+Algortihm with Al-Khwarizmi
+
+What's an Algortihm ? 
+-computational procedure for solving a problem
+input -> alg -> output
+
+program <-> Algortihm
+Prog Language <-> Pseudo Code
+Computer <-> model of computation               Model of computation 
+                                            -what operation an algo is allowed
+                                            -cost (time) of each up
+--Random Acess Machine (RAM)
+-Random Acess Memory modeled by big Array
+in constant time can load words do O(1) computation
+store O(1) words
+O(1) registers
+
+Word: w bits
+log(size of memory)
+
+--Pointer Machine:
+dynamicanic allcoated objects
+-objects has O(1) fields.
+field = word()

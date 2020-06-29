@@ -1,0 +1,75 @@
+Efficient procedures for solving large-scale problems
+Scalability : Large inputs depedns Technology grows,in 2000 1 million big input now 1 trillion is big input
+Data Structurs: Bin Search Tree , hash-tables, Balanced Binary Search Tree 
+Use Pyhton
+
+Content:
+8 Modules:
+-1st Algo thinking
+-Sorting and Trees
+-Simulating Logic Network
+-Hashing
+-numerics : RSA encryption
+-Graphs: Rubik's Cube
+-Shortest Paths: Caltech -> MIT
+-Dynamic Programming: Image compression
+-Advanced topics
+
+1st problem: PeakFinder 1D
+One -dimensioon version : Array Numbers [a,b,c,d,e,f,g,h,i]
+
+Straightforward Algorithm:
+
+Start from left
+[1,2,...,n/,...,n-1,n]
+
+worst case complexity O(n)
+Amelioration Use a Binary Search in order to take down complexity
+
+if a [n//2] < a [n/2-1] then only look at the left half 1 to n/2-1 
+to look for a peak
+else if a a[n2] < a[n2+1] then only look at the right half ton n/2+1 to n 
+else n/2 position is a peak
+
+worst case Binary Search
+T(n)=T(n/2)+ O(1)   O(1) car on n'inclut pas les constantes dans la complexite (ici 2)
+Base Case:
+T(n) = O(1)+...+O(1) = O(log2(n))
+    Mulitply log2(n) times
+
+    Test on 10 Million :
+    O(n) take 13 Second while O(log(n)) take 0.001 Second
+
+
+PeakFinder 2D:
+Matrice n Rows and m columns               
+a is a 2d peak                                    c
+                                                b a d
+                                                  e
+This mean a >= b, a >= d , a >= c , a >= e
+
+Greedy Ascent Algortihms :
+
+Worst case : O(nm) complexity
+if n =m O(n^2)
+More optimized Attempt1
+Pick Middle j = m/2
+Find a 1D peak at (i,j)
+Use (i,j) to find 1D peak
+But this not working
+
+Attempt2:
+Pick middle colum j = m/2
+Find global Maximum on colum j at (i,j)
+compare (i,j-1),(i,j),(i,j+1)
+Pick left clos if (i,j-1) > (i,j) Similary for right
+
+if (i,j ) > (i,j-1), (i,j+1) => (i,j)
+Solve new problme half-columns
+When you have global Maximum your done 
+
+complexity ; T(n,m)= T(n,m/2)+O(n)  O(n) is the Max
+
+T(n,1)=O(n)
+T(n,m) = 0(n) + ... + O(n) =O(nlog2(n))
+        Multiply log2m
